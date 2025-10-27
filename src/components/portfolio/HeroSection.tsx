@@ -52,7 +52,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-12 pt-28 pb-16 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
+    <section className="min-h-screen flex items-center justify-center px-8 sm:px-12 md:px-16 pt-24 pb-12 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
       {/* Floating background elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
@@ -102,7 +102,7 @@ export function HeroSection() {
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Samir</span>
             </h1>
             
-            <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-['Playfair_Display'] min-h-[2rem] md:min-h-[2.5rem]">
+            <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-['Playfair_Display'] min-h-[2rem] md:min-h-[2.5rem]">
               {displayedText}<span className="animate-pulse">|</span>
             </h3>
             
@@ -123,7 +123,7 @@ export function HeroSection() {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-4 mb-6">
               <Button 
                 size="lg"
                 className="bg-black hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-all"

@@ -57,7 +57,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-16 px-6 sm:px-8 md:px-12 bg-gray-50 dark:bg-gray-800" id="project">
+    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="project">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -79,7 +79,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Featured Work
           </motion.h1>
@@ -88,7 +88,7 @@ export function ProjectsSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 dark:border-gray-700 mb-8 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-6 w-24 mx-auto"
           />
           
           <motion.div 
@@ -96,7 +96,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-gray-600 dark:text-gray-400 mb-12 text-sm sm:text-base px-4 sm:px-0"
+            className="text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base px-4 sm:px-0"
           >
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>

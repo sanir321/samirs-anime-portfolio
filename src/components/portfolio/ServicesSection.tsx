@@ -31,7 +31,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-16 px-6 sm:px-8 md:px-12 bg-white dark:bg-gray-900" id="services">
+    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-white dark:bg-gray-900" id="services">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -53,7 +53,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Our Features & Services
           </motion.h1>
@@ -62,7 +62,7 @@ export function ServicesSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 dark:border-gray-700 mb-12 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-8 w-24 mx-auto"
           />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 
 
 export function ContactSection() {
   return (
-    <section className="py-12 sm:py-14 md:py-16 px-6 sm:px-8 md:px-12 bg-gray-50 dark:bg-gray-800" id="contact">
+    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="contact">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -28,7 +28,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl font-bold mb-6 font-['Open_Sans'] dark:text-white"
+            className="text-2xl sm:text-3xl font-bold mb-4 font-['Open_Sans'] dark:text-white"
           >
             Get in Touch
           </motion.h1>
@@ -39,7 +39,7 @@ export function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-gray-600 dark:text-gray-300 text-sm mb-8"
+              className="text-gray-600 dark:text-gray-300 text-sm mb-6"
             >
               Feel free to reach out through any of these channels
             </motion.p>
