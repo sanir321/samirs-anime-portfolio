@@ -45,11 +45,11 @@ export default function Portfolio() {
       <Navigation />
       
       <div className="md:ml-0">
-        <div className="reveal"><HeroSection /></div>
-        <div className="reveal"><AboutSection /></div>
-        <div className="reveal"><ProjectsSection /></div>
-        <div className="reveal"><ServicesSection /></div>
-        <div className="reveal"><ContactSection /></div>
+        <div id="home" className="reveal"><HeroSection /></div>
+        <div id="about" className="reveal"><AboutSection /></div>
+        <div id="project" className="reveal"><ProjectsSection /></div>
+        <div id="services" className="reveal"><ServicesSection /></div>
+        <div id="contact" className="reveal"><ContactSection /></div>
         <Footer />
       </div>
     </motion.div>
