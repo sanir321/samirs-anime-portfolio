@@ -3,19 +3,35 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { useState } from "react";
 
 export function ContactSection() {
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitContact = useMutation(api.contact.submitContactForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
     };
-    console.log("Contact form submitted:", data);
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    e.currentTarget.reset();
+
+    try {
+      await submitContact(data);
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast.error("Failed to send message. Please try again or contact me directly at zenosayz05@gmail.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -165,7 +181,8 @@ export function ContactSection() {
                         type="text"
                         name="name"
                         required
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900 disabled:opacity-50"
                         placeholder="Your Name"
                       />
                     </motion.div>
@@ -180,7 +197,8 @@ export function ContactSection() {
                         type="email"
                         name="email"
                         required
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900 disabled:opacity-50"
                         placeholder="Your Email"
                       />
                     </motion.div>
@@ -195,7 +213,8 @@ export function ContactSection() {
                         name="message"
                         required
                         rows={5}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900 resize-none"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900 resize-none disabled:opacity-50"
                         placeholder="Your Message"
                       />
                     </motion.div>
@@ -208,9 +227,10 @@ export function ContactSection() {
                     >
                       <Button 
                         type="submit"
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+                        disabled={isSubmitting}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50"
                       >
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
                     </motion.div>
                   </form>
