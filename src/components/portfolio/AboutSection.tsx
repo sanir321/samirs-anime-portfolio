@@ -139,7 +139,7 @@ export function AboutSection() {
               className="flex justify-center"
             >
               <img 
-                src="https://harmless-tapir-303.convex.cloud/api/storage/9451c778-2fce-485e-b5e7-3fae877ef251"
+                src="https://harmless-tapir-303.convex.cloud/api/storage/34a187ae-7bb7-444c-b9dc-a9e98c854629"
                 alt="Profile"
                 className="rounded-2xl border border-black shadow-lg w-full max-w-md"
               />
