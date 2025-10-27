@@ -122,7 +122,7 @@ export function HeroSection() {
           >
             <div className="relative w-full max-w-md mx-auto">
               <img 
-                src="https://harmless-tapir-303.convex.cloud/api/storage/1362a634-b964-45f0-985d-709e7815c1ff"
+                src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
                 alt="Samir Khadka"
                 className="relative rounded-xl border border-gray-300 shadow-lg w-full"
               />
