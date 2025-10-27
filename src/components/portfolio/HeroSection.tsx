@@ -212,11 +212,6 @@ export function HeroSection() {
                   }}
                   animate={{
                     scale: [1, 1.02, 1],
-                    filter: [
-                      "hue-rotate(0deg) brightness(1)",
-                      "hue-rotate(10deg) brightness(1.1)",
-                      "hue-rotate(0deg) brightness(1)"
-                    ],
                   }}
                   transition={{
                     duration: 4,
@@ -224,13 +219,12 @@ export function HeroSection() {
                     ease: "easeInOut"
                   }}
                   whileHover={{
-                    scale: window.innerWidth > 768 ? 1.15 : 1,
-                    rotateY: window.innerWidth > 768 ? 15 : 0,
-                    rotateX: window.innerWidth > 768 ? -10 : 0,
-                    filter: "hue-rotate(30deg) brightness(1.2) saturate(1.3)",
-                    transition: { 
-                      duration: 0.4,
-                      ease: "easeOut"
+                    scale: window.innerWidth > 768 ? 1.05 : 1,
+                    rotate: window.innerWidth > 768 ? -2 : 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 10,
                     }
                   }}
                   whileTap={{
@@ -280,44 +274,41 @@ export function HeroSection() {
                 }}
               />
               
-              {/* Additional sparkle effects */}
+              {/* Floating sparkles around the image */}
               <motion.div
-                className="absolute top-1/4 -left-2 w-8 h-8 bg-yellow-400 rounded-full opacity-40 blur-sm"
+                className="absolute top-10 right-10 w-3 h-3 bg-yellow-400 rounded-full"
                 animate={{
-                  scale: [0, 1.5, 0],
-                  opacity: [0, 0.6, 0],
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  delay: 0,
                 }}
               />
               <motion.div
-                className="absolute bottom-1/3 -right-2 w-6 h-6 bg-pink-400 rounded-full opacity-40 blur-sm"
+                className="absolute bottom-20 left-10 w-2 h-2 bg-blue-400 rounded-full"
                 animate={{
-                  scale: [0, 1.5, 0],
-                  opacity: [0, 0.6, 0],
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
                 }}
                 transition={{
-                  duration: 2.5,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+              />
+              <motion.div
+                className="absolute top-1/2 right-5 w-2 h-2 bg-pink-400 rounded-full"
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
                   delay: 1,
-                }}
-              />
-              
-              {/* Glowing ring effect */}
-              <motion.div
-                className="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0"
-                animate={{
-                  opacity: [0, 0.5, 0],
-                  scale: [0.95, 1.05, 0.95],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
                 }}
               />
             </div>
