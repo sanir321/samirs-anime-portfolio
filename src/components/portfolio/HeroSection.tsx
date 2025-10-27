@@ -225,22 +225,26 @@ export function HeroSection() {
                   }}
                   whileHover={{
                     scale: window.innerWidth > 768 ? 1.15 : 1,
-                    rotateZ: window.innerWidth > 768 ? [0, -5, 5, -5, 5, 0] : 0,
+                    rotateY: window.innerWidth > 768 ? 15 : 0,
+                    rotateX: window.innerWidth > 768 ? -10 : 0,
                     filter: "hue-rotate(30deg) brightness(1.2) saturate(1.3)",
                     transition: { 
-                      duration: 0.6,
-                      rotateZ: {
-                        duration: 0.8,
-                        ease: "easeInOut"
-                      }
+                      duration: 0.4,
+                      ease: "easeOut"
                     }
                   }}
                   whileTap={{
-                    scale: 0.9,
+                    scale: window.innerWidth > 768 ? 1.2 : 1,
                     rotate: window.innerWidth > 768 ? 360 : 0,
                     transition: { 
-                      duration: 0.8,
-                      ease: "easeOut"
+                      scale: {
+                        duration: 0.3,
+                        ease: "easeOut"
+                      },
+                      rotate: {
+                        duration: 0.8,
+                        ease: "easeInOut"
+                      }
                     }
                   }}
                 />
