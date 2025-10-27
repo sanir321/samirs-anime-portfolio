@@ -16,6 +16,8 @@ export function HeroSection() {
   const yImage = useTransform(scrollY, [0, 500], [0, 150]);
   const yText = useTransform(scrollY, [0, 500], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const characterY = useTransform(scrollY, [0, 500], [0, 100]);
+  const characterScale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
   useEffect(() => {
     const typingSpeed = isDeleting ? 50 : 100;
@@ -179,7 +181,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: 50, scale: 0.5 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            style={{ y: yImage }}
+            style={{ y: characterY, scale: characterScale }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative flex justify-center items-center"
           >
@@ -211,20 +213,22 @@ export function HeroSection() {
                     transformStyle: "preserve-3d"
                   }}
                   animate={{
-                    scale: [1, 1.02, 1],
+                    scale: [1, 1.03, 1],
+                    y: [0, -5, 0],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                   whileHover={{
-                    scale: window.innerWidth > 768 ? 1.05 : 1,
-                    rotate: window.innerWidth > 768 ? -2 : 0,
+                    scale: window.innerWidth > 768 ? 1.15 : 1,
+                    rotate: window.innerWidth > 768 ? -5 : 0,
+                    filter: window.innerWidth > 768 ? "brightness(1.1) saturate(1.2)" : "none",
                     transition: {
                       type: "spring",
-                      stiffness: 200,
-                      damping: 10,
+                      stiffness: 300,
+                      damping: 15,
                     }
                   }}
                   whileTap={{
