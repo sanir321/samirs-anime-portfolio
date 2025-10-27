@@ -165,14 +165,14 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             style={{ y: yImage }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center items-center overflow-hidden"
+            className="relative flex justify-center items-center"
           >
-            <div className="relative w-full max-w-[240px] sm:max-w-[280px] md:max-w-md mx-auto px-6 sm:px-4">
+            <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-md mx-auto px-8 sm:px-4 overflow-hidden">
               <motion.img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
                 alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
                 loading="lazy"
-                className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[400px] sm:max-h-[500px]"
+                className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[350px] sm:max-h-[450px]"
                 style={{ willChange: 'transform' }}
                 animate={{
                   x: window.innerWidth > 768 ? mousePosition.x : 0,
@@ -180,11 +180,11 @@ export function HeroSection() {
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 150,
-                  damping: 15,
+                  stiffness: window.innerWidth > 768 ? 150 : 100,
+                  damping: window.innerWidth > 768 ? 15 : 20,
                 }}
                 whileHover={{
-                  scale: window.innerWidth > 768 ? 1.05 : 1.01,
+                  scale: window.innerWidth > 768 ? 1.05 : 1,
                   rotate: window.innerWidth > 768 ? 2 : 0,
                 }}
               />
