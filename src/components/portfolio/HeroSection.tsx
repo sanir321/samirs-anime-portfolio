@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MapPin, Briefcase, Download, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -8,8 +8,14 @@ export function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const words = ["Frontend Developer", "UI/UX Designer", "Web Enthusiast", "React Developer"];
+
+  const { scrollY } = useScroll();
+  const yImage = useTransform(scrollY, [0, 500], [0, 150]);
+  const yText = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
     const typingSpeed = isDeleting ? 50 : 100;
@@ -33,12 +39,51 @@ export function HeroSection() {
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, wordIndex, words]);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20" id="home">
+    <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20 relative overflow-hidden" id="home">
+      {/* Floating background elements */}
+      <motion.div
+        className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
+        animate={{
+          y: [0, -30, 0],
+          x: [0, 20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-40 right-20 w-32 h-32 bg-purple-200 rounded-full opacity-20 blur-xl"
+        animate={{
+          y: [0, 40, 0],
+          x: [0, -30, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
       <div className="max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          style={{ opacity }}
           className="inline-block bg-gray-100 rounded-full px-4 py-2 mb-8"
         >
           <span className="text-sm text-gray-700">
@@ -50,6 +95,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
+            style={{ y: yText }}
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-7xl font-bold mb-4 font-['Raleway']">
@@ -117,14 +163,54 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
+            style={{ y: yImage }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
             <div className="relative w-full max-w-md mx-auto">
-              <img 
+              <motion.img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
                 alt="Samir Khadka"
                 className="relative rounded-xl border border-gray-300 shadow-lg w-full"
+                animate={{
+                  x: mousePosition.x,
+                  y: mousePosition.y,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 150,
+                  damping: 15,
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 2,
+                }}
+              />
+              
+              {/* Floating decorative elements around character */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-16 h-16 bg-blue-400 rounded-full opacity-30 blur-md"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-400 rounded-full opacity-30 blur-md"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  rotate: [360, 180, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
               />
             </div>
           </motion.div>

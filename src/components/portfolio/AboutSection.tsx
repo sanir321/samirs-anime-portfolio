@@ -1,9 +1,29 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Code2, GraduationCap, FolderOpen } from "lucide-react";
+import { useRef } from "react";
 
 export function AboutSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const yImage = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+
   return (
-    <section className="py-20 px-4 bg-white" id="about">
+    <section ref={ref} className="py-20 px-4 bg-white relative overflow-hidden" id="about">
+      {/* Parallax background shapes */}
+      <motion.div
+        className="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl"
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-10 w-32 h-32 bg-purple-100 rounded-full opacity-30 blur-2xl"
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, 200]) }}
+      />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -136,12 +156,60 @@ export function AboutSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex justify-center"
+              style={{ y: yImage, scale }}
+              className="flex justify-center relative"
             >
-              <img 
+              <motion.img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/34a187ae-7bb7-444c-b9dc-a9e98c854629"
                 alt="Profile"
                 className="rounded-2xl border border-black shadow-lg w-full max-w-md"
+                whileHover={{
+                  scale: 1.05,
+                  rotate: -2,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 10,
+                }}
+              />
+              
+              {/* Floating sparkles around the image */}
+              <motion.div
+                className="absolute top-10 right-10 w-3 h-3 bg-yellow-400 rounded-full"
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0,
+                }}
+              />
+              <motion.div
+                className="absolute bottom-20 left-10 w-2 h-2 bg-blue-400 rounded-full"
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.5,
+                }}
+              />
+              <motion.div
+                className="absolute top-1/2 right-5 w-2 h-2 bg-pink-400 rounded-full"
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1,
+                }}
               />
             </motion.div>
           </div>
