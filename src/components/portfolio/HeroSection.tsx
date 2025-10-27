@@ -126,7 +126,7 @@ export function HeroSection() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Button 
                 size="lg"
-                className="bg-black hover:bg-gray-800 text-white rounded-lg"
+                className="bg-black hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-all"
               >
                 <ArrowRight className="mr-2 h-4 w-4" />
                 Hire Me
@@ -134,7 +134,7 @@ export function HeroSection() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-black text-black hover:bg-black hover:text-white rounded-lg transition-all"
+                className="border-2 border-black text-black hover:bg-black hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white dark:hover:border-blue-600 rounded-lg transition-all"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV

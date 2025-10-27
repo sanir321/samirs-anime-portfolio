@@ -157,7 +157,7 @@ export function ProjectsSection() {
                       >
                         <Button 
                           size="sm"
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300"
+                          className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-full transition-all duration-300"
                           onClick={() => window.open(project.github, "_blank")}
                         >
                           <Github className="mr-2 h-4 w-4" />
@@ -171,7 +171,7 @@ export function ProjectsSection() {
                       >
                         <Button 
                           size="sm"
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300"
+                          className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-full transition-all duration-300"
                           onClick={() => window.open(project.demo, "_blank")}
                         >
                           <ExternalLink className="mr-2 h-4 w-4" />
