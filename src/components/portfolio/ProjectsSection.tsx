@@ -65,14 +65,42 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-500 text-sm uppercase tracking-wider mb-4">PROJECTS</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']">Featured Work</h1>
-          <div className="border-t border-gray-300 mb-8 w-24 mx-auto"></div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+          >
+            PROJECTS
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+          >
+            Featured Work
+          </motion.h1>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="border-t border-gray-300 mb-8 w-24 mx-auto"
+          />
           
-          <div className="text-gray-600 mb-12 space-y-1">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-gray-600 mb-12 space-y-1"
+          >
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>
-          </div>
+          </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -81,17 +109,21 @@ export function ProjectsSection() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -6 }}
               >
                 <Card className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
-                  <div className="relative overflow-hidden">
+                  <motion.div 
+                    className="relative overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <img 
                       src={project.image}
                       alt={project.title}
                       className="w-full h-48 object-cover"
                     />
-                  </div>
+                  </motion.div>
                   <CardContent className="p-6 flex-1 flex flex-col text-left">
                     <h3 className="text-xl font-bold mb-2 text-blue-600">{project.title}</h3>
                     <p className="text-gray-600 text-sm mb-4 flex-1">{project.description}</p>

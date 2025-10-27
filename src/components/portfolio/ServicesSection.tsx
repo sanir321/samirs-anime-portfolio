@@ -35,25 +35,51 @@ export function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-500 text-sm uppercase tracking-wider mb-4">SERVICES</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']">Our Features & Services</h1>
-          <div className="border-t border-gray-300 mb-12 w-24 mx-auto"></div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+          >
+            SERVICES
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+          >
+            Our Features & Services
+          </motion.h1>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="border-t border-gray-300 mb-12 w-24 mx-auto"
+          />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
               >
                 <Card className="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 h-full group relative overflow-hidden">
                   <div className="absolute inset-0 bg-blue-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"></div>
                   <CardContent className="p-6 text-center relative z-10">
-                    <div className="inline-flex mb-4 text-blue-600 group-hover:text-white transition-colors duration-500">
+                    <motion.div 
+                      className="inline-flex mb-4 text-blue-600 group-hover:text-white transition-colors duration-500"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    >
                       {service.icon}
-                    </div>
+                    </motion.div>
                     <h3 className="text-xl font-bold mb-3 text-blue-600 group-hover:text-white transition-colors duration-500">{service.title}</h3>
                     <p className="text-gray-600 text-sm group-hover:text-white transition-colors duration-500">{service.description}</p>
                   </CardContent>
