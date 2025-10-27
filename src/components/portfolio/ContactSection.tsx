@@ -108,7 +108,13 @@ export function ContactSection() {
     try {
       await submitContact(data);
       toast.success("Message sent successfully! I'll get back to you soon.");
-      e.currentTarget.reset();
+      
+      // Safely reset the form
+      const form = e.currentTarget;
+      if (form) {
+        form.reset();
+      }
+      
       setErrors({});
       setTouched({});
     } catch (error) {
