@@ -54,7 +54,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 pt-4 md:pt-16 pb-6 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
+    <section className="min-h-screen flex items-center justify-center px-2 sm:px-8 md:px-16 pt-2 md:pt-16 pb-4 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
       {/* Floating background elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
