@@ -52,7 +52,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
+    <section className="min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-12 pt-28 pb-16 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
       {/* Floating background elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
@@ -79,7 +79,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,11 +98,11 @@ export function HeroSection() {
             style={{ y: yText }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 font-['Raleway'] text-gray-900 dark:text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-['Raleway'] text-gray-900 dark:text-white">
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Samir</span>
             </h1>
             
-            <h3 className="text-2xl sm:text-3xl md:text-4xl text-gray-700 dark:text-gray-300 mb-6 font-['Playfair_Display'] min-h-[2.5rem] md:min-h-[3rem]">
+            <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-['Playfair_Display'] min-h-[2rem] md:min-h-[2.5rem]">
               {displayedText}<span className="animate-pulse">|</span>
             </h3>
             

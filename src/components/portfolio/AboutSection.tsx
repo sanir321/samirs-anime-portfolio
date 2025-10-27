@@ -13,7 +13,7 @@ export function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
+    <section ref={ref} className="py-16 px-6 sm:px-8 md:px-12 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
       {/* Parallax background shapes */}
       <motion.div
         className="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl"
@@ -24,7 +24,7 @@ export function AboutSection() {
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 200]) }}
       />
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Building Meaningful
           </motion.h1>
@@ -54,7 +54,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Digital Experiences
           </motion.h1>

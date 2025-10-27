@@ -90,7 +90,7 @@ export function Navigation() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-3">
           <nav className="flex justify-center">
             <ul className="flex gap-2 sm:gap-4 md:gap-8 bg-white dark:bg-gray-800 shadow-md rounded-full px-3 sm:px-6 py-2 sm:py-3 overflow-x-auto">
               {navItems.map((item) => (

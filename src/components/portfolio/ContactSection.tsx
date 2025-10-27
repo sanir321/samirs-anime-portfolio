@@ -5,8 +5,8 @@ import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 
 
 export function ContactSection() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-800" id="contact">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-12 sm:py-14 md:py-16 px-6 sm:px-8 md:px-12 bg-gray-50 dark:bg-gray-800" id="contact">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

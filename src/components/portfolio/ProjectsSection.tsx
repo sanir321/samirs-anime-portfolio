@@ -57,8 +57,8 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800" id="project">
-      <div className="max-w-7xl mx-auto text-center">
+    <section className="py-16 px-6 sm:px-8 md:px-12 bg-gray-50 dark:bg-gray-800" id="project">
+      <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Featured Work
           </motion.h1>
