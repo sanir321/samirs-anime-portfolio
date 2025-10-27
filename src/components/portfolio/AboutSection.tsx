@@ -131,7 +131,7 @@ export function AboutSection() {
                     <GraduationCap className="h-5 w-5 text-blue-600" />
                     Education
                   </h3>
-                  <p className="text-gray-600">B.Tech CSE at SA Engineering College</p>
+                  <p className="text-gray-600">B.Tech CSBS (Computer Science and Business System) at SA Engineering College, Chennai, Tamil Nadu, India</p>
                 </motion.div>
                 
                 <motion.div 
