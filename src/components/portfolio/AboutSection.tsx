@@ -86,7 +86,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-gray-600 text-base leading-relaxed"
+                className="text-gray-600 dark:text-gray-400 text-base leading-relaxed"
               >
                 When I'm not coding, I enjoy learning new technologies, improving my projects,
                 and exploring better ways to make the web faster and more engaging.
@@ -125,13 +125,13 @@ export function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 1.0 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="bg-white border-2 border-black rounded-lg p-6 transition-all hover:border-red-500 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-6 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-                    <GraduationCap className="h-5 w-5 text-blue-600" />
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     Education
                   </h3>
-                  <p className="text-gray-600">B.Tech CSBS (Computer Science and Business System) at SA Engineering College, Chennai, Tamil Nadu, India</p>
+                  <p className="text-gray-600 dark:text-gray-400">B.Tech CSBS (Computer Science and Business System) at SA Engineering College, Chennai, Tamil Nadu, India</p>
                 </motion.div>
                 
                 <motion.div 
@@ -140,13 +140,13 @@ export function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 1.1 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="bg-white border-2 border-black rounded-lg p-6 transition-all hover:border-red-500 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-6 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-                    <FolderOpen className="h-5 w-5 text-blue-600" />
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <FolderOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     Projects
                   </h3>
-                  <p className="text-gray-600">Built more than 5 projects</p>
+                  <p className="text-gray-600 dark:text-gray-400">Built more than 5 projects</p>
                 </motion.div>
               </div>
             </div>
