@@ -49,7 +49,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
           >
             Our Features & Services
           </motion.h1>
@@ -61,7 +61,7 @@ export function ServicesSection() {
             className="border-t border-gray-300 mb-12 w-24 mx-auto"
           />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}

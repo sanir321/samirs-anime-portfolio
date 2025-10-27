@@ -79,7 +79,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
           >
             Featured Work
           </motion.h1>
@@ -96,13 +96,13 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-gray-600 mb-12 space-y-1"
+            className="text-gray-600 mb-12 text-sm sm:text-base px-4 sm:px-0"
           >
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}

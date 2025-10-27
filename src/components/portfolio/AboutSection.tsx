@@ -45,7 +45,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mb-2 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-['Open_Sans']"
           >
             Building Meaningful
           </motion.h1>
@@ -54,7 +54,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
           >
             Digital Experiences
           </motion.h1>
@@ -64,10 +64,10 @@ export function AboutSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="border-t border-gray-300 mb-12 w-1/3 origin-left"
+            className="border-t border-gray-300 mb-12 w-24 sm:w-32 md:w-1/3 origin-left"
           />
           
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div className="space-y-6">
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}

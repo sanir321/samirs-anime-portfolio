@@ -41,7 +41,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mb-12 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 font-['Open_Sans']"
           >
             Get in Touch with Us
           </motion.h1>
@@ -53,7 +53,7 @@ export function ContactSection() {
             className="border-t border-gray-300 mb-12 w-24 mx-auto"
           />
           
-          <div className="grid md:grid-cols-2 gap-12 text-left">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}

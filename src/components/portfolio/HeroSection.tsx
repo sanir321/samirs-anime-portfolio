@@ -98,21 +98,21 @@ export function HeroSection() {
             style={{ y: yText }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold mb-4 font-['Raleway']">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 font-['Raleway']">
               Hi, I'm <span className="text-blue-600">Samir</span>
             </h1>
             
-            <h3 className="text-3xl md:text-4xl text-gray-700 mb-6 font-['Playfair_Display'] min-h-[3rem]">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl text-gray-700 mb-6 font-['Playfair_Display'] min-h-[2.5rem] md:min-h-[3rem]">
               {displayedText}<span className="animate-pulse">|</span>
             </h3>
             
-            <div className="text-base text-gray-600 mb-6 space-y-1 font-['Roboto']">
-              <p>I create beautiful, functional, and user-centered digital experiences. With</p>
-              <p>2+ years of experience in web development, I bring ideas to life through</p>
-              <p>clean code and thoughtful design</p>
+            <div className="text-sm sm:text-base text-gray-600 mb-6 space-y-1 font-['Roboto']">
+              <p>I create beautiful, functional, and user-centered digital experiences.</p>
+              <p className="hidden sm:block">With 2+ years of experience in web development, I bring ideas to life</p>
+              <p className="hidden sm:block">through clean code and thoughtful design.</p>
             </div>
             
-            <div className="flex items-center gap-6 mb-8 text-gray-700 text-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-8 text-gray-700 text-sm">
               <p className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-blue-600" />
                 Based in India

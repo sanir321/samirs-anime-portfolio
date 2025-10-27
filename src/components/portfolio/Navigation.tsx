@@ -63,21 +63,21 @@ export function Navigation() {
         animate={{ y: 0 }}
         className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm"
       >
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <nav className="flex justify-center">
-            <ul className="flex gap-8 bg-white shadow-md rounded-full px-6 py-3">
+            <ul className="flex gap-2 sm:gap-4 md:gap-8 bg-white shadow-md rounded-full px-3 sm:px-6 py-2 sm:py-3 overflow-x-auto">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
+                    className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full transition-all whitespace-nowrap ${
                       activeSection === item.id 
                         ? "bg-black text-white" 
                         : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
-                    {item.icon}
-                    <span className="font-medium hidden md:inline">{item.label}</span>
+                    <span className="flex-shrink-0">{item.icon}</span>
+                    <span className="font-medium hidden sm:inline text-sm md:text-base">{item.label}</span>
                   </button>
                 </li>
               ))}
@@ -97,10 +97,10 @@ export function Navigation() {
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
         onClick={scrollToTop}
-        className="fixed bottom-10 right-10 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center cursor-pointer z-50 shadow-lg hover:bg-blue-700 transition-colors"
+        className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 bg-blue-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center cursor-pointer z-50 shadow-lg hover:bg-blue-700 transition-colors"
         style={{ display: showBackToTop ? "flex" : "none" }}
       >
-        <ChevronUp className="h-6 w-6" />
+        <ChevronUp className="h-5 w-5 sm:h-6 sm:w-6" />
       </motion.button>
     </>
   );
