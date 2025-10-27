@@ -8,10 +8,10 @@ import { Footer } from "@/components/portfolio/Footer";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       <Navigation />
       
-      <div className="md:ml-48">
+      <div className="md:ml-0">
         <HeroSection />
         <AboutSection />
         <ProjectsSection />

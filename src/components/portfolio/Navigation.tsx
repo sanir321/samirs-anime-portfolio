@@ -37,34 +37,32 @@ export function Navigation() {
   ];
 
   return (
-    <motion.nav 
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-      className="fixed left-0 top-0 h-screen z-50 hidden md:flex"
+    <motion.header 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm"
     >
-      <div className="bg-slate-950/90 backdrop-blur-lg border-r border-purple-500/20 h-full flex items-center px-6">
-        <ul className="space-y-8">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => scrollToSection(item.id)}
-                className={`flex items-center gap-3 transition-colors group ${
-                  activeSection === item.id 
-                    ? "text-purple-400" 
-                    : "text-gray-400 hover:text-purple-400"
-                }`}
-              >
-                <span className={`transition-colors ${
-                  activeSection === item.id ? "text-purple-400" : "text-gray-500"
-                }`}>
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <nav className="flex justify-center">
+          <ul className="flex gap-8 bg-white shadow-md rounded-full px-6 py-3">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
+                    activeSection === item.id 
+                      ? "bg-black text-white" 
+                      : "text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
                   {item.icon}
-                </span>
-                <span className="font-medium">{item.label}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
+                  <span className="font-medium hidden md:inline">{item.label}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </motion.nav>
+    </motion.header>
   );
 }

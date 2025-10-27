@@ -57,19 +57,19 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-20 px-4 bg-slate-900/50" id="project">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 bg-gray-50" id="project">
+      <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-purple-400 text-sm uppercase tracking-wider mb-4">PROJECTS</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">Featured Work</h1>
-          <div className="border-t border-purple-500/20 mb-8"></div>
+          <p className="text-gray-500 text-sm uppercase tracking-wider mb-4">PROJECTS</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']">Featured Work</h1>
+          <div className="border-t border-gray-300 mb-8 w-24 mx-auto"></div>
           
-          <div className="text-center text-gray-400 mb-12 space-y-1">
+          <div className="text-gray-600 mb-12 space-y-1">
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>
           </div>
@@ -82,22 +82,23 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -6 }}
               >
-                <Card className="bg-slate-800/50 border-purple-500/20 overflow-hidden group hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col">
+                <Card className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
                   <div className="relative overflow-hidden">
                     <img 
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                    <p className="text-gray-400 mb-4 flex-1">{project.description}</p>
+                  <CardContent className="p-6 flex-1 flex flex-col text-left">
+                    <h3 className="text-xl font-bold mb-2 text-blue-600">{project.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 flex-1">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
-                        <Badge key={tag} variant="outline" className="border-purple-500/50 text-purple-300">
+                        <Badge key={tag} className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0">
                           {tag}
                         </Badge>
                       ))}
@@ -106,7 +107,7 @@ export function ProjectsSection() {
                     <div className="flex gap-3">
                       <Button 
                         size="sm"
-                        className="flex-1 bg-purple-500 hover:bg-purple-600"
+                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
                         onClick={() => window.open(project.github, "_blank")}
                       >
                         <Github className="mr-2 h-4 w-4" />
@@ -114,12 +115,11 @@ export function ProjectsSection() {
                       </Button>
                       <Button 
                         size="sm"
-                        variant="outline"
-                        className="flex-1 border-purple-500 text-purple-300 hover:bg-purple-500/10"
+                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
                         onClick={() => window.open(project.demo, "_blank")}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
+                        Demo
                       </Button>
                     </div>
                   </CardContent>

@@ -4,15 +4,17 @@ import { MapPin, Briefcase, Download, ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-20" id="home">
+    <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20" id="home">
       <div className="max-w-7xl mx-auto w-full">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-purple-400 mb-8"
+          className="inline-block bg-gray-100 rounded-full px-4 py-2 mb-8"
         >
-          <span className="text-2xl">. </span>Available for freelance work
-        </motion.p>
+          <span className="text-sm text-gray-700">
+            <span className="font-bold text-green-600">• </span>Available for freelance work
+          </span>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -20,25 +22,25 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">
-              Hi, I'm <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Samir</span>
+            <h1 className="text-6xl md:text-7xl font-bold mb-4 font-['Raleway']">
+              Hi, I'm <span className="text-blue-600">Samir</span>
             </h1>
             
-            <h3 className="text-3xl text-gray-300 mb-6">Frontend Developer</h3>
+            <h3 className="text-3xl md:text-4xl text-gray-700 mb-6 font-['Playfair_Display']">Frontend Developer</h3>
             
-            <div className="text-lg text-gray-400 mb-6 space-y-2">
+            <div className="text-base text-gray-600 mb-6 space-y-1 font-['Roboto']">
               <p>I create beautiful, functional, and user-centered digital experiences. With</p>
               <p>2+ years of experience in web development, I bring ideas to life through</p>
               <p>clean code and thoughtful design</p>
             </div>
             
-            <div className="flex items-center gap-6 mb-8 text-gray-300">
+            <div className="flex items-center gap-6 mb-8 text-gray-700 text-sm">
               <p className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-purple-400" />
+                <MapPin className="h-5 w-5 text-blue-600" />
                 Based in India
               </p>
               <p className="flex items-center gap-2">
-                <Briefcase className="h-5 w-5 text-purple-400" />
+                <Briefcase className="h-5 w-5 text-blue-600" />
                 Available Now
               </p>
             </div>
@@ -46,7 +48,7 @@ export function HeroSection() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                className="bg-black hover:bg-gray-800 text-white rounded-lg"
               >
                 <ArrowRight className="mr-2 h-4 w-4" />
                 Hire Me
@@ -54,26 +56,26 @@ export function HeroSection() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-purple-500 text-purple-300 hover:bg-purple-500/10"
+                className="border-2 border-black text-black hover:bg-black hover:text-white rounded-lg transition-all"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
               </Button>
             </div>
             
-            <div className="border-t border-purple-500/20 pt-6">
-              <p className="text-gray-400 mb-4">Follow me:</p>
+            <div className="border-t border-gray-300 pt-6">
+              <p className="text-gray-600 mb-4">Follow me:</p>
               <div className="flex gap-4">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-400 hover:text-purple-400 transition-colors">
+                   className="text-gray-700 hover:text-blue-600 transition-colors">
                   <i className="fa-brands fa-github text-xl"></i>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                   className="text-gray-400 hover:text-purple-400 transition-colors">
+                   className="text-gray-700 hover:text-blue-600 transition-colors">
                   <i className="fa-brands fa-linkedin text-xl"></i>
                 </a>
                 <a href="https://instagram.com/kineee_2" target="_blank" rel="noopener noreferrer"
-                   className="text-gray-400 hover:text-purple-400 transition-colors">
+                   className="text-gray-700 hover:text-blue-600 transition-colors">
                   <i className="fa-brands fa-instagram text-xl"></i>
                 </a>
               </div>
@@ -87,11 +89,10 @@ export function HeroSection() {
             className="relative"
           >
             <div className="relative w-full max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-3xl opacity-30"></div>
               <img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/1362a634-b964-45f0-985d-709e7815c1ff"
                 alt="Samir Khadka"
-                className="relative rounded-3xl border-4 border-purple-500/50 shadow-2xl w-full"
+                className="relative rounded-xl border border-gray-300 shadow-lg w-full"
               />
             </div>
           </motion.div>
