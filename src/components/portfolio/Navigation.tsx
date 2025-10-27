@@ -86,13 +86,13 @@ export function Navigation() {
       <motion.header 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm"
+        className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <nav className="flex justify-center">
-            <ul className="flex gap-2 sm:gap-4 md:gap-8 bg-white shadow-md rounded-full px-3 sm:px-6 py-2 sm:py-3 overflow-x-auto">
+            <ul className="flex gap-2 sm:gap-4 md:gap-8 bg-white dark:bg-gray-800 shadow-md rounded-full px-3 sm:px-6 py-2 sm:py-3 overflow-x-auto">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
@@ -101,8 +101,8 @@ export function Navigation() {
                     aria-current={activeSection === item.id ? "page" : undefined}
                     className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full transition-all whitespace-nowrap ${
                       activeSection === item.id 
-                        ? "bg-black text-white" 
-                        : "text-gray-700 hover:bg-gray-100"
+                        ? "bg-black dark:bg-blue-600 text-white" 
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                     }`}
                   >
                     <span className="flex-shrink-0">{item.icon}</span>

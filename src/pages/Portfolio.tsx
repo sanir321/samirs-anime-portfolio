@@ -40,7 +40,7 @@ export default function Portfolio() {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white text-gray-900"
+      className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
       <ScrollProgress />
       <Navigation />
