@@ -57,7 +57,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="project">
+    <section className="py-8 sm:py-10 md:py-12 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="project">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -79,7 +79,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Featured Work
           </motion.h1>
@@ -88,7 +88,7 @@ export function ProjectsSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 dark:border-gray-700 mb-6 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-4 w-24 mx-auto"
           />
           
           <motion.div 
@@ -96,13 +96,13 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base px-4 sm:px-0"
+            className="text-gray-600 dark:text-gray-400 mb-6 text-xs sm:text-sm px-4 sm:px-0"
           >
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>
           </motion.div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -121,21 +121,21 @@ export function ProjectsSection() {
                     <img 
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-all duration-300 group-hover:brightness-110"
+                      className="w-full h-40 object-cover transition-all duration-300 group-hover:brightness-110"
                     />
                     <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </motion.div>
-                  <CardContent className="p-6 flex-1 flex flex-col text-left">
+                  <CardContent className="p-4 flex-1 flex flex-col text-left">
                     <motion.h3 
-                      className="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300"
+                      className="text-lg font-bold mb-2 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300"
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs mb-3 flex-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
                     
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-3">
                       {project.tags.map(tag => (
                         <motion.div
                           key={tag}

@@ -54,7 +54,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-8 sm:px-12 md:px-16 pt-24 pb-12 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
+    <section className="min-h-screen flex items-center justify-center px-8 sm:px-12 md:px-16 pt-20 pb-8 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
       {/* Floating background elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
@@ -100,21 +100,21 @@ export function HeroSection() {
             style={{ y: yText }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-['Raleway'] text-gray-900 dark:text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 font-['Raleway'] text-gray-900 dark:text-white">
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Samir</span>
             </h1>
             
-            <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-['Playfair_Display'] min-h-[2rem] md:min-h-[2.5rem]">
+            <h3 className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4 font-['Playfair_Display'] min-h-[1.5rem] md:min-h-[2rem]">
               {displayedText}<span className="animate-pulse">|</span>
             </h3>
             
-            <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 space-y-1 font-['Roboto']">
+            <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 space-y-1 font-['Roboto']">
               <p>I create beautiful, functional, and user-centered digital experiences.</p>
               <p className="hidden sm:block">With 2+ years of experience in web development, I bring ideas to life</p>
               <p className="hidden sm:block">through clean code and thoughtful design.</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
               <p className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 Based in India
@@ -125,7 +125,7 @@ export function HeroSection() {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap gap-3 mb-4">
               {/* TODO: Add your hire me link here (e.g., contact form, email, or booking link) */}
               <Button 
                 size="lg"
@@ -156,8 +156,8 @@ export function HeroSection() {
               </Button>
             </div>
             
-            <div className="border-t border-gray-300 dark:border-gray-700 pt-6">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">Follow me:</p>
+            <div className="border-t border-gray-300 dark:border-gray-700 pt-4">
+              <p className="text-gray-600 dark:text-gray-400 mb-3 text-sm">Follow me:</p>
               <div className="flex gap-4">
                 {/* TODO: Replace with your actual GitHub profile URL */}
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 

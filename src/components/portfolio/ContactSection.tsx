@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Instagram, MessageCircle } from 
 
 export function ContactSection() {
   return (
-    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="contact">
+    <section className="py-8 sm:py-10 md:py-12 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="contact">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -28,7 +28,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl font-bold mb-4 font-['Open_Sans'] dark:text-white"
+            className="text-xl sm:text-2xl font-bold mb-3 font-['Open_Sans'] dark:text-white"
           >
             Get in Touch
           </motion.h1>
@@ -39,12 +39,12 @@ export function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-gray-600 dark:text-gray-300 text-sm mb-6"
+              className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-4"
             >
               Feel free to reach out through any of these channels
             </motion.p>
             
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+            <div className="grid sm:grid-cols-2 gap-3 mb-4">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export function ContactSection() {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 h-full">
-                  <CardContent className="p-4 text-center">
+                  <CardContent className="p-3 text-center">
                     <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-full inline-flex mb-2">
                       <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     </div>
@@ -137,7 +137,7 @@ export function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="flex justify-center gap-3 pt-2"
+              className="flex justify-center gap-3 pt-1"
             >
               {/* TODO: Replace with your actual GitHub profile URL */}
               <motion.a 

@@ -31,7 +31,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-12 sm:py-14 md:py-16 px-8 sm:px-12 md:px-16 bg-white dark:bg-gray-900" id="services">
+    <section className="py-8 sm:py-10 md:py-12 px-8 sm:px-12 md:px-16 bg-white dark:bg-gray-900" id="services">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -53,7 +53,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Our Features & Services
           </motion.h1>
@@ -62,10 +62,10 @@ export function ServicesSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 dark:border-gray-700 mb-8 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-6 w-24 mx-auto"
           />
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -93,10 +93,10 @@ export function ServicesSection() {
                     }}
                   />
                   
-                  <CardContent className="p-8 text-center relative z-10">
+                  <CardContent className="p-6 text-center relative z-10">
                     {/* Icon container with gradient background */}
                     <motion.div 
-                      className={`inline-flex mb-6 p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg group-hover:shadow-xl transition-all duration-500 cursor-pointer`}
+                      className={`inline-flex mb-4 p-3 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg group-hover:shadow-xl transition-all duration-500 cursor-pointer`}
                       whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                       title={service.title}
@@ -104,15 +104,15 @@ export function ServicesSection() {
                       {service.icon}
                     </motion.div>
                       
-                      <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-white transition-colors duration-500">
+                      <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white group-hover:text-white transition-colors duration-500">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-500">
+                      <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed group-hover:text-white/90 transition-colors duration-500">
                         {service.description}
                       </p>
                       
                       {/* Decorative dots */}
-                      <div className="flex justify-center gap-1 mt-6">
+                      <div className="flex justify-center gap-1 mt-4">
                         {[...Array(3)].map((_, i) => (
                           <motion.div
                             key={i}
