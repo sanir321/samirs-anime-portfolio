@@ -57,7 +57,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-20 px-4 bg-gray-50" id="project">
+    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800" id="project">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -70,7 +70,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+            className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-4"
           >
             PROJECTS
           </motion.p>
@@ -79,7 +79,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Featured Work
           </motion.h1>
@@ -88,7 +88,7 @@ export function ProjectsSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 mb-8 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-8 w-24 mx-auto"
           />
           
           <motion.div 
@@ -96,7 +96,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-gray-600 mb-12 text-sm sm:text-base px-4 sm:px-0"
+            className="text-gray-600 dark:text-gray-400 mb-12 text-sm sm:text-base px-4 sm:px-0"
           >
             <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
             <p>development, modern frameworks, and creative problem-solving.</p>
@@ -112,7 +112,7 @@ export function ProjectsSection() {
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -8, scale: 1.02 }}
               >
-                <Card className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:border-blue-400 transition-all duration-300 h-full flex flex-col group">
+                <Card className="bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 h-full flex flex-col group">
                   <motion.div 
                     className="relative overflow-hidden"
                     whileHover={{ scale: 1.1 }}
@@ -127,13 +127,13 @@ export function ProjectsSection() {
                   </motion.div>
                   <CardContent className="p-6 flex-1 flex flex-col text-left">
                     <motion.h3 
-                      className="text-xl font-bold mb-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300"
+                      className="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300"
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-gray-600 text-sm mb-4 flex-1 group-hover:text-gray-700 transition-colors duration-300">{project.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (

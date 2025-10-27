@@ -13,7 +13,7 @@ export function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-white relative overflow-hidden" id="about">
+    <section ref={ref} className="py-20 px-4 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
       {/* Parallax background shapes */}
       <motion.div
         className="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl"
@@ -36,7 +36,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+            className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-4"
           >
             ABOUT ME
           </motion.p>
@@ -45,7 +45,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Building Meaningful
           </motion.h1>
@@ -54,7 +54,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Digital Experiences
           </motion.h1>
@@ -64,7 +64,7 @@ export function AboutSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="border-t border-gray-300 mb-12 w-24 sm:w-32 md:w-1/3 origin-left"
+            className="border-t border-gray-300 dark:border-gray-700 mb-12 w-24 sm:w-32 md:w-1/3 origin-left"
           />
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -74,7 +74,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-gray-600 text-base leading-relaxed"
+                className="text-gray-600 dark:text-gray-400 text-base leading-relaxed"
               >
                 I'm a creative front-end developer passionate about building modern and responsive web experiences.
                 My journey began with a love for design and evolved into a deep curiosity for how the web works — combining
@@ -98,7 +98,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-2xl font-bold mt-8 mb-6"
+                className="text-2xl font-bold mt-8 mb-6 text-gray-900 dark:text-white"
               >
                 What Drives Me
               </motion.h2>
@@ -110,13 +110,13 @@ export function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.9 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="bg-white border-2 border-black rounded-lg p-6 transition-all hover:border-red-500 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-6 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-                    <Code2 className="h-5 w-5 text-blue-600" />
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <Code2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     Languages
                   </h3>
-                  <p className="text-gray-600">HTML, CSS, JavaScript, TypeScript, React</p>
+                  <p className="text-gray-600 dark:text-gray-400">HTML, CSS, JavaScript, TypeScript, React</p>
                 </motion.div>
                 
                 <motion.div 

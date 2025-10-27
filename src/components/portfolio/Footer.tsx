@@ -7,16 +7,16 @@ export function Footer() {
   };
 
   return (
-    <footer className="py-12 px-4 bg-black text-white">
+    <footer className="py-12 px-4 bg-black dark:bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center gap-6">
           <h2 className="text-2xl font-bold font-['Montserrat']">
             Samir
           </h2>
           
-          <ul className="flex flex-wrap justify-center gap-6 text-gray-300">
+          <ul className="flex flex-wrap justify-center gap-6 text-gray-300 dark:text-gray-400">
             <li>
-              <button onClick={() => scrollToSection("home")} className="hover:text-blue-500 transition-colors font-medium">
+              <button onClick={() => scrollToSection("home")} className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium">
                 Home
               </button>
             </li>

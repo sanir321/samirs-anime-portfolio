@@ -31,7 +31,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-20 px-4 bg-white" id="services">
+    <section className="py-20 px-4 bg-white dark:bg-gray-900" id="services">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -44,7 +44,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+            className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-4"
           >
             SERVICES
           </motion.p>
@@ -53,7 +53,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Our Features & Services
           </motion.h1>
@@ -62,7 +62,7 @@ export function ServicesSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 mb-12 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-12 w-24 mx-auto"
           />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -75,7 +75,7 @@ export function ServicesSection() {
                 transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -12, scale: 1.05 }}
               >
-                <Card className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full group relative overflow-hidden">
+                <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full group relative overflow-hidden">
                   {/* Gradient background on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0`}></div>
                   
@@ -104,10 +104,10 @@ export function ServicesSection() {
                       {service.icon}
                     </motion.div>
                       
-                      <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-white transition-colors duration-500">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-white transition-colors duration-500">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-500">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-500">
                         {service.description}
                       </p>
                       
@@ -116,7 +116,7 @@ export function ServicesSection() {
                         {[...Array(3)].map((_, i) => (
                           <motion.div
                             key={i}
-                            className="w-2 h-2 rounded-full bg-gray-300 group-hover:bg-white transition-colors duration-500"
+                            className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-white transition-colors duration-500"
                             animate={{
                               scale: [1, 1.3, 1],
                             }}
