@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MapPin, Briefcase, Download, ArrowRight } from "lucide-react";
+import { MapPin, Briefcase, Download, ArrowRight, Github, Linkedin, Instagram } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function HeroSection() {
@@ -146,15 +146,15 @@ export function HeroSection() {
               <div className="flex gap-4">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <i className="fa-brands fa-github text-xl"></i>
+                  <Github className="h-5 w-5" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <i className="fa-brands fa-linkedin text-xl"></i>
+                  <Linkedin className="h-5 w-5" />
                 </a>
                 <a href="https://instagram.com/kineee_2" target="_blank" rel="noopener noreferrer"
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <i className="fa-brands fa-instagram text-xl"></i>
+                  <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
