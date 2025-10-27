@@ -184,33 +184,67 @@ export function HeroSection() {
             className="relative flex justify-center items-center"
           >
             <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-md mx-auto px-8 sm:px-4 overflow-hidden">
-              <motion.img 
-                src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
-                alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
-                loading="lazy"
-                className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[350px] sm:max-h-[450px]"
-                style={{ willChange: 'transform' }}
+              {/* Magnetic cursor effect container */}
+              <motion.div
+                className="relative"
                 animate={{
-                  x: window.innerWidth > 768 ? mousePosition.x : 0,
-                  y: window.innerWidth > 768 ? mousePosition.y : 0,
-                  rotateY: window.innerWidth > 768 ? mousePosition.x * 0.5 : 0,
-                  rotateX: window.innerWidth > 768 ? -mousePosition.y * 0.5 : 0,
+                  rotateY: window.innerWidth > 768 ? mousePosition.x * 0.3 : 0,
+                  rotateX: window.innerWidth > 768 ? -mousePosition.y * 0.3 : 0,
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: window.innerWidth > 768 ? 150 : 100,
-                  damping: window.innerWidth > 768 ? 15 : 20,
+                  stiffness: 100,
+                  damping: 20,
                 }}
-                whileHover={{
-                  scale: window.innerWidth > 768 ? 1.08 : 1,
-                  rotate: window.innerWidth > 768 ? [0, -3, 3, -3, 0] : 0,
-                  transition: { duration: 0.5 }
+                style={{ 
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px"
                 }}
-                whileTap={{
-                  scale: 0.95,
-                  rotate: window.innerWidth > 768 ? 5 : 0,
-                }}
-              />
+              >
+                <motion.img 
+                  src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
+                  alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
+                  loading="lazy"
+                  className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[350px] sm:max-h-[450px]"
+                  style={{ 
+                    willChange: 'transform',
+                    transformStyle: "preserve-3d"
+                  }}
+                  animate={{
+                    scale: [1, 1.02, 1],
+                    filter: [
+                      "hue-rotate(0deg) brightness(1)",
+                      "hue-rotate(10deg) brightness(1.1)",
+                      "hue-rotate(0deg) brightness(1)"
+                    ],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  whileHover={{
+                    scale: window.innerWidth > 768 ? 1.15 : 1,
+                    rotateZ: window.innerWidth > 768 ? [0, -5, 5, -5, 5, 0] : 0,
+                    filter: "hue-rotate(30deg) brightness(1.2) saturate(1.3)",
+                    transition: { 
+                      duration: 0.6,
+                      rotateZ: {
+                        duration: 0.8,
+                        ease: "easeInOut"
+                      }
+                    }
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                    rotate: window.innerWidth > 768 ? 360 : 0,
+                    transition: { 
+                      duration: 0.8,
+                      ease: "easeOut"
+                    }
+                  }}
+                />
+              </motion.div>
               
               {/* Enhanced floating decorative elements around character */}
               <motion.div
