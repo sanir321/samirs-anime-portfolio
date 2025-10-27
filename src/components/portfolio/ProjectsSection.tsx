@@ -110,49 +110,74 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <Card className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
+                <Card className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:border-blue-400 transition-all duration-300 h-full flex flex-col group">
                   <motion.div 
                     className="relative overflow-hidden"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                   >
                     <img 
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover transition-all duration-300 group-hover:brightness-110"
                     />
+                    <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </motion.div>
                   <CardContent className="p-6 flex-1 flex flex-col text-left">
-                    <h3 className="text-xl font-bold mb-2 text-blue-600">{project.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4 flex-1">{project.description}</p>
+                    <motion.h3 
+                      className="text-xl font-bold mb-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <p className="text-gray-600 text-sm mb-4 flex-1 group-hover:text-gray-700 transition-colors duration-300">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
-                        <Badge key={tag} className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0">
-                          {tag}
-                        </Badge>
+                        <motion.div
+                          key={tag}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0 cursor-pointer">
+                            {tag}
+                          </Badge>
+                        </motion.div>
                       ))}
                     </div>
                     
-                    <div className="flex gap-3">
-                      <Button 
-                        size="sm"
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
-                        onClick={() => window.open(project.github, "_blank")}
+                    <div className="flex gap-3 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      <motion.div
+                        className="flex-1"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <Github className="mr-2 h-4 w-4" />
-                        GitHub
-                      </Button>
-                      <Button 
-                        size="sm"
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
-                        onClick={() => window.open(project.demo, "_blank")}
+                        <Button 
+                          size="sm"
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300"
+                          onClick={() => window.open(project.github, "_blank")}
+                        >
+                          <Github className="mr-2 h-4 w-4" />
+                          GitHub
+                        </Button>
+                      </motion.div>
+                      <motion.div
+                        className="flex-1"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
-                      </Button>
+                        <Button 
+                          size="sm"
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300"
+                          onClick={() => window.open(project.demo, "_blank")}
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Demo
+                        </Button>
+                      </motion.div>
                     </div>
                   </CardContent>
                 </Card>
