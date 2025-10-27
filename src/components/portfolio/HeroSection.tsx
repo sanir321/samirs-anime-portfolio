@@ -54,7 +54,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-8 sm:px-12 md:px-16 pt-20 pb-8 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 pt-16 pb-6 relative overflow-hidden bg-white dark:bg-gray-900" id="home">
       {/* Floating background elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 blur-xl"
@@ -86,14 +86,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           style={{ opacity }}
-          className="inline-block bg-gray-100 dark:bg-gray-800 rounded-full px-4 py-2 mb-8"
+          className="inline-block bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1.5 mb-4 sm:mb-6"
         >
           <span className="text-sm text-gray-700 dark:text-gray-300">
             <span className="font-bold text-green-600 dark:text-green-400">• </span>Available for freelance work
           </span>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

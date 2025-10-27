@@ -13,7 +13,7 @@ export function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <section ref={ref} className="py-6 sm:py-8 md:py-10 px-6 sm:px-10 md:px-12 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
+    <section ref={ref} className="py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-12 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
       {/* Parallax background shapes */}
       <motion.div
         className="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl"
@@ -67,8 +67,8 @@ export function AboutSection() {
             className="border-t border-gray-300 dark:border-gray-700 mb-4 w-24 sm:w-32 md:w-1/3 origin-left"
           />
           
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-start">
-            <div className="space-y-2">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-5 items-start">
+            <div className="space-y-1.5">
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

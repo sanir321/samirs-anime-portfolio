@@ -7,9 +7,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="py-10 px-8 sm:px-12 md:px-16 bg-black dark:bg-gray-950 text-white">
+    <footer className="py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-16 bg-black dark:bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-3 sm:gap-4">
           <h2 className="text-2xl font-bold font-['Montserrat']">
             Samir
           </h2>

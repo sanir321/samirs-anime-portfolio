@@ -57,7 +57,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 px-8 sm:px-12 md:px-16 bg-gray-50 dark:bg-gray-800" id="project">
+    <section className="py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-16 bg-gray-50 dark:bg-gray-800" id="project">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -102,7 +102,7 @@ export function ProjectsSection() {
             <p>development, modern frameworks, and creative problem-solving.</p>
           </motion.div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
