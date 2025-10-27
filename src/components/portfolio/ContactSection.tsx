@@ -65,14 +65,12 @@ export function ContactSection() {
   }) => {
     const newErrors: typeof errors = {};
 
-    // Name validation
     if (!data.name.trim()) {
       newErrors.name = "Name is required";
     } else if (data.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!data.email.trim()) {
       newErrors.email = "Email is required";
@@ -80,7 +78,6 @@ export function ContactSection() {
       newErrors.email = "Please enter a valid email address";
     }
 
-    // Message validation
     if (!data.message.trim()) {
       newErrors.message = "Message is required";
     } else if (data.message.trim().length < 10) {
@@ -101,7 +98,6 @@ export function ContactSection() {
       message: formData.get("message") as string,
     };
 
-    // Validate form
     if (!validateForm(data)) {
       toast.error("Please fix the errors in the form");
       return;
@@ -117,14 +113,15 @@ export function ContactSection() {
       setTouched({});
     } catch (error) {
       console.error("Failed to send message:", error);
-      toast.error("Failed to send message. Please try again or contact me directly at zenosayz05@gmail.com");
+      const errorMessage = error instanceof Error ? error.message : "Failed to send message. Please try again.";
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50" id="contact">
+    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900" id="contact">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -138,7 +135,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 text-sm uppercase tracking-wider mb-4"
+            className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-4"
           >
             CONTACT
           </motion.p>
@@ -147,7 +144,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 font-['Open_Sans']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 font-['Open_Sans'] dark:text-white"
           >
             Get in Touch with Us
           </motion.h1>
@@ -156,7 +153,7 @@ export function ContactSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border-t border-gray-300 mb-8 md:mb-12 w-24 mx-auto"
+            className="border-t border-gray-300 dark:border-gray-700 mb-8 md:mb-12 w-24 mx-auto"
           />
           
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
@@ -167,7 +164,7 @@ export function ContactSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="space-y-6 md:space-y-8"
             >
-              <p className="text-gray-600 text-sm sm:text-base">
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
                 I'm always open to discuss exciting projects and new opportunities. Let's collaborate!
               </p>
               
@@ -177,10 +174,10 @@ export function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="flex items-center gap-3 sm:gap-4 text-gray-700 text-sm sm:text-base"
+                  className="flex items-center gap-3 sm:gap-4 text-gray-700 dark:text-gray-300 text-sm sm:text-base"
                 >
-                  <div className="p-2 sm:p-3 bg-gray-100 rounded-lg flex-shrink-0">
-                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                  <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <span className="break-all">zenosayz05@gmail.com</span>
                 </motion.div>
@@ -190,10 +187,10 @@ export function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.7 }}
-                  className="flex items-center gap-3 sm:gap-4 text-gray-700 text-sm sm:text-base"
+                  className="flex items-center gap-3 sm:gap-4 text-gray-700 dark:text-gray-300 text-sm sm:text-base"
                 >
-                  <div className="p-2 sm:p-3 bg-gray-100 rounded-lg flex-shrink-0">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                  <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0">
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <span>7904721312</span>
                 </motion.div>
@@ -203,10 +200,10 @@ export function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.8 }}
-                  className="flex items-center gap-3 sm:gap-4 text-gray-700 text-sm sm:text-base"
+                  className="flex items-center gap-3 sm:gap-4 text-gray-700 dark:text-gray-300 text-sm sm:text-base"
                 >
-                  <div className="p-2 sm:p-3 bg-gray-100 rounded-lg flex-shrink-0">
-                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                  <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0">
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <span>India</span>
                 </motion.div>
@@ -225,7 +222,7 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 rounded-full hover:bg-black hover:text-white transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
                 >
                   <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                 </motion.a>
@@ -235,7 +232,7 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 rounded-full hover:bg-blue-600 hover:text-white transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all"
                 >
                   <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </motion.a>
@@ -245,7 +242,7 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 rounded-full hover:bg-pink-600 hover:text-white transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-pink-600 hover:text-white transition-all"
                 >
                   <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
                 </motion.a>
@@ -258,7 +255,7 @@ export function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Card className="bg-white border-2 border-gray-200 shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
+              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6 sm:p-8">
                   <form onSubmit={handleContactSubmit} className="space-y-5 sm:space-y-6">
                     <motion.div
@@ -267,7 +264,7 @@ export function ContactSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.6 }}
                     >
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -286,8 +283,8 @@ export function ContactSection() {
                         }}
                         aria-invalid={errors.name ? "true" : "false"}
                         aria-describedby={errors.name ? "name-error" : undefined}
-                        className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
-                          errors.name ? "border-red-500" : "border-gray-300"
+                        className={`w-full px-4 py-3 bg-white dark:bg-gray-900 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
+                          errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"
                         }`}
                         placeholder="John Doe"
                       />
@@ -302,7 +299,7 @@ export function ContactSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.7 }}
                     >
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Your Email <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -321,8 +318,8 @@ export function ContactSection() {
                         }}
                         aria-invalid={errors.email ? "true" : "false"}
                         aria-describedby={errors.email ? "email-error" : undefined}
-                        className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
-                          errors.email ? "border-red-500" : "border-gray-300"
+                        className={`w-full px-4 py-3 bg-white dark:bg-gray-900 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
+                          errors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"
                         }`}
                         placeholder="john@example.com"
                       />
@@ -337,7 +334,7 @@ export function ContactSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.8 }}
                     >
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Your Message <span className="text-red-500">*</span>
                       </label>
                       <textarea
@@ -356,8 +353,8 @@ export function ContactSection() {
                         }}
                         aria-invalid={errors.message ? "true" : "false"}
                         aria-describedby={errors.message ? "message-error" : undefined}
-                        className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 resize-none disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
-                          errors.message ? "border-red-500" : "border-gray-300"
+                        className={`w-full px-4 py-3 bg-white dark:bg-gray-900 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white resize-none disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
+                          errors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"
                         }`}
                         placeholder="Tell me about your project..."
                       />

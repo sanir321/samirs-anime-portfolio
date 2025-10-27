@@ -6,6 +6,7 @@ import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -13,10 +14,8 @@ export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger visibility after component mounts
     setIsVisible(true);
 
-    // Add reveal animation on scroll
     const handleScroll = () => {
       const revealElements = document.querySelectorAll('.reveal');
       const windowHeight = window.innerHeight;
@@ -31,7 +30,7 @@ export default function Portfolio() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,6 +44,7 @@ export default function Portfolio() {
     >
       <ScrollProgress />
       <Navigation />
+      <ThemeToggle />
       
       <div className="md:ml-0">
         <div id="home" className="reveal"><HeroSection /></div>
