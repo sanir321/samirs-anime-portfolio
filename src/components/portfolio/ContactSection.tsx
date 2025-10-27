@@ -121,7 +121,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900" id="contact">
+    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-800" id="contact">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -255,7 +255,7 @@ export function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Card className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
+              <Card className="bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6 sm:p-8">
                   <form onSubmit={handleContactSubmit} className="space-y-5 sm:space-y-6">
                     <motion.div
