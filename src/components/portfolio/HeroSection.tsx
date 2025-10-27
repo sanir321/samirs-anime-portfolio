@@ -177,10 +177,10 @@ export function HeroSection() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50, scale: 0.5 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
             style={{ y: yImage }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="relative flex justify-center items-center"
           >
             <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-md mx-auto px-8 sm:px-4 overflow-hidden">
@@ -193,6 +193,8 @@ export function HeroSection() {
                 animate={{
                   x: window.innerWidth > 768 ? mousePosition.x : 0,
                   y: window.innerWidth > 768 ? mousePosition.y : 0,
+                  rotateY: window.innerWidth > 768 ? mousePosition.x * 0.5 : 0,
+                  rotateX: window.innerWidth > 768 ? -mousePosition.y * 0.5 : 0,
                 }}
                 transition={{
                   type: "spring",
@@ -200,22 +202,29 @@ export function HeroSection() {
                   damping: window.innerWidth > 768 ? 15 : 20,
                 }}
                 whileHover={{
-                  scale: window.innerWidth > 768 ? 1.05 : 1,
-                  rotate: window.innerWidth > 768 ? 2 : 0,
+                  scale: window.innerWidth > 768 ? 1.08 : 1,
+                  rotate: window.innerWidth > 768 ? [0, -3, 3, -3, 0] : 0,
+                  transition: { duration: 0.5 }
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  rotate: window.innerWidth > 768 ? 5 : 0,
                 }}
               />
               
-              {/* Floating decorative elements around character */}
+              {/* Enhanced floating decorative elements around character */}
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16 bg-blue-400 rounded-full opacity-30 blur-md"
                 animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 180, 360],
+                  x: [0, 10, 0],
+                  y: [0, -10, 0],
                 }}
                 transition={{
                   duration: 6,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
@@ -223,11 +232,54 @@ export function HeroSection() {
                 animate={{
                   scale: [1, 1.3, 1],
                   rotate: [360, 180, 0],
+                  x: [0, -10, 0],
+                  y: [0, 10, 0],
                 }}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: "easeInOut",
+                }}
+              />
+              
+              {/* Additional sparkle effects */}
+              <motion.div
+                className="absolute top-1/4 -left-2 w-8 h-8 bg-yellow-400 rounded-full opacity-40 blur-sm"
+                animate={{
+                  scale: [0, 1.5, 0],
+                  opacity: [0, 0.6, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.div
+                className="absolute bottom-1/3 -right-2 w-6 h-6 bg-pink-400 rounded-full opacity-40 blur-sm"
+                animate={{
+                  scale: [0, 1.5, 0],
+                  opacity: [0, 0.6, 0],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+              />
+              
+              {/* Glowing ring effect */}
+              <motion.div
+                className="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0"
+                animate={{
+                  opacity: [0, 0.5, 0],
+                  scale: [0.95, 1.05, 0.95],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               />
             </div>
