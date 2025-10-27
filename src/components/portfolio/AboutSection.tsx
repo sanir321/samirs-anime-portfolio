@@ -13,7 +13,7 @@ export function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <section ref={ref} className="py-8 sm:py-10 md:py-12 px-8 sm:px-12 md:px-16 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
+    <section ref={ref} className="py-6 sm:py-8 md:py-10 px-6 sm:px-10 md:px-12 bg-white dark:bg-gray-900 relative overflow-hidden" id="about">
       {/* Parallax background shapes */}
       <motion.div
         className="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl"
@@ -36,7 +36,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-4"
+            className="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-wider mb-2"
           >
             ABOUT ME
           </motion.p>
@@ -45,7 +45,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-lg sm:text-xl md:text-2xl font-bold mb-1 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Building Meaningful
           </motion.h1>
@@ -54,7 +54,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 font-['Open_Sans'] text-gray-900 dark:text-white"
+            className="text-lg sm:text-xl md:text-2xl font-bold mb-3 font-['Open_Sans'] text-gray-900 dark:text-white"
           >
             Digital Experiences
           </motion.h1>
@@ -64,17 +64,17 @@ export function AboutSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="border-t border-gray-300 dark:border-gray-700 mb-8 w-24 sm:w-32 md:w-1/3 origin-left"
+            className="border-t border-gray-300 dark:border-gray-700 mb-4 w-24 sm:w-32 md:w-1/3 origin-left"
           />
           
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
-            <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-start">
+            <div className="space-y-2">
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
               >
                 I'm a creative front-end developer passionate about building modern and responsive web experiences.
                 My journey began with a love for design and evolved into a deep curiosity for how the web works — combining
@@ -86,7 +86,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-gray-600 dark:text-gray-400 text-base leading-relaxed"
+                className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
               >
                 When I'm not coding, I enjoy learning new technologies, improving my projects,
                 and exploring better ways to make the web faster and more engaging.
@@ -98,25 +98,25 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-xl font-bold mt-4 mb-4 text-gray-900 dark:text-white"
+                className="text-base font-bold mt-2 mb-2 text-gray-900 dark:text-white"
               >
                 What Drives Me
               </motion.h2>
               
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.9 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-4 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
+                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-3 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-lg font-bold mb-1 flex items-center gap-2 text-gray-900 dark:text-white">
-                    <Code2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-sm font-bold mb-1 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <Code2 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     Languages
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">HTML, CSS, JavaScript, TypeScript, React</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">HTML, CSS, JavaScript, TypeScript, React</p>
                 </motion.div>
                 
                 <motion.div 
@@ -125,13 +125,13 @@ export function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 1.0 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-6 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
+                  className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-3 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
-                    <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-sm font-bold mb-1 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <GraduationCap className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     Education
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">B.Tech CSBS (Computer Science and Business System) at SA Engineering College, Chennai, Tamil Nadu, India</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">B.Tech CSBS (Computer Science and Business System) at SA Engineering College, Chennai, Tamil Nadu, India</p>
                 </motion.div>
                 
                 <motion.div 
@@ -142,11 +142,11 @@ export function AboutSection() {
                   whileHover={{ y: -6, scale: 1.03 }}
                   className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-6 transition-all hover:border-red-500 dark:hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-lg cursor-pointer"
                 >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 dark:text-white">
-                    <FolderOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-sm font-bold mb-1 flex items-center gap-2 text-gray-900 dark:text-white">
+                    <FolderOpen className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     Projects
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">Built more than 5 projects</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">Built more than 5 projects</p>
                 </motion.div>
               </div>
             </div>
