@@ -9,15 +9,22 @@ export function Navigation() {
   useEffect(() => {
     // Keyboard navigation
     const handleKeyDown = (e: KeyboardEvent) => {
-      const sections = ["home", "about", "project", "services", "contact"];
-      const currentIndex = sections.indexOf(activeSection);
-      
-      if (e.key === "ArrowDown" && currentIndex < sections.length - 1) {
+      // Only handle Page Up/Down and Home/End keys for section navigation
+      // Allow normal arrow key scrolling
+      if (e.key === "PageDown") {
         e.preventDefault();
-        scrollToSection(sections[currentIndex + 1]);
-      } else if (e.key === "ArrowUp" && currentIndex > 0) {
+        const sections = ["home", "about", "project", "services", "contact"];
+        const currentIndex = sections.indexOf(activeSection);
+        if (currentIndex < sections.length - 1) {
+          scrollToSection(sections[currentIndex + 1]);
+        }
+      } else if (e.key === "PageUp") {
         e.preventDefault();
-        scrollToSection(sections[currentIndex - 1]);
+        const sections = ["home", "about", "project", "services", "contact"];
+        const currentIndex = sections.indexOf(activeSection);
+        if (currentIndex > 0) {
+          scrollToSection(sections[currentIndex - 1]);
+        }
       } else if (e.key === "Home") {
         e.preventDefault();
         scrollToSection("home");
