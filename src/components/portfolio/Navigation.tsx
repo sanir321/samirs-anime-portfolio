@@ -108,8 +108,8 @@ export function Navigation() {
                     aria-current={activeSection === item.id ? "page" : undefined}
                     className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full transition-all whitespace-nowrap ${
                       activeSection === item.id 
-                        ? "bg-black dark:bg-blue-600 text-white" 
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        ? "bg-primary text-primary-foreground shadow-sm" 
+                        : "text-foreground/80 hover:bg-secondary hover:text-foreground"
                     }`}
                   >
                     <span className="flex-shrink-0">{item.icon}</span>
