@@ -19,14 +19,14 @@ export function ThemeToggle() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     
-    // Add transition class before toggling
-    document.documentElement.style.transition = "background-color 0.3s ease, color 0.3s ease";
+    // Add faster transition class before toggling
+    document.documentElement.style.transition = "background-color 0.15s ease, color 0.15s ease";
     document.documentElement.classList.toggle("dark", newTheme === "dark");
     
     // Remove transition after it completes
     setTimeout(() => {
       document.documentElement.style.transition = "";
-    }, 300);
+    }, 150);
   };
 
   return (
