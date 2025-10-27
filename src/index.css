@@ -124,6 +124,15 @@
   button:not([disabled]),
   [role="button"]:not([disabled]) {
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Performance optimization for animations */
+  .motion-safe\:animate-spin,
+  [class*="animate-"],
+  [style*="transform"] {
+    will-change: transform;
   }
 }
 

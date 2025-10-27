@@ -170,8 +170,10 @@ export function HeroSection() {
             <div className="relative w-full max-w-md mx-auto">
               <motion.img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
-                alt="Samir Khadka"
+                alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
+                loading="lazy"
                 className="relative rounded-xl border border-gray-300 shadow-lg w-full"
+                style={{ willChange: 'transform' }}
                 animate={{
                   x: mousePosition.x,
                   y: mousePosition.y,

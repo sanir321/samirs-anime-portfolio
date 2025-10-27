@@ -15,6 +15,48 @@ export function ContactSection() {
     email?: string;
     message?: string;
   }>({});
+  const [touched, setTouched] = useState<{
+    name?: boolean;
+    email?: boolean;
+    message?: boolean;
+  }>({});
+
+  const validateField = (field: string, value: string) => {
+    const newErrors = { ...errors };
+
+    if (field === "name") {
+      if (!value.trim()) {
+        newErrors.name = "Name is required";
+      } else if (value.trim().length < 2) {
+        newErrors.name = "Name must be at least 2 characters";
+      } else {
+        delete newErrors.name;
+      }
+    }
+
+    if (field === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!value.trim()) {
+        newErrors.email = "Email is required";
+      } else if (!emailRegex.test(value)) {
+        newErrors.email = "Please enter a valid email address";
+      } else {
+        delete newErrors.email;
+      }
+    }
+
+    if (field === "message") {
+      if (!value.trim()) {
+        newErrors.message = "Message is required";
+      } else if (value.trim().length < 10) {
+        newErrors.message = "Message must be at least 10 characters";
+      } else {
+        delete newErrors.message;
+      }
+    }
+
+    setErrors(newErrors);
+  };
 
   const validateForm = (data: {
     name: string;
@@ -72,6 +114,7 @@ export function ContactSection() {
       toast.success("Message sent successfully! I'll get back to you soon.");
       e.currentTarget.reset();
       setErrors({});
+      setTouched({});
     } catch (error) {
       console.error("Failed to send message:", error);
       toast.error("Failed to send message. Please try again or contact me directly at zenosayz05@gmail.com");
@@ -232,13 +275,24 @@ export function ContactSection() {
                         type="text"
                         name="name"
                         disabled={isSubmitting}
+                        onBlur={(e) => {
+                          setTouched({ ...touched, name: true });
+                          validateField("name", e.target.value);
+                        }}
+                        onChange={(e) => {
+                          if (touched.name) {
+                            validateField("name", e.target.value);
+                          }
+                        }}
+                        aria-invalid={errors.name ? "true" : "false"}
+                        aria-describedby={errors.name ? "name-error" : undefined}
                         className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
                           errors.name ? "border-red-500" : "border-gray-300"
                         }`}
                         placeholder="John Doe"
                       />
                       {errors.name && (
-                        <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                        <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">{errors.name}</p>
                       )}
                     </motion.div>
                     
@@ -256,13 +310,24 @@ export function ContactSection() {
                         type="email"
                         name="email"
                         disabled={isSubmitting}
+                        onBlur={(e) => {
+                          setTouched({ ...touched, email: true });
+                          validateField("email", e.target.value);
+                        }}
+                        onChange={(e) => {
+                          if (touched.email) {
+                            validateField("email", e.target.value);
+                          }
+                        }}
+                        aria-invalid={errors.email ? "true" : "false"}
+                        aria-describedby={errors.email ? "email-error" : undefined}
                         className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
                           errors.email ? "border-red-500" : "border-gray-300"
                         }`}
                         placeholder="john@example.com"
                       />
                       {errors.email && (
-                        <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                        <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">{errors.email}</p>
                       )}
                     </motion.div>
                     
@@ -280,13 +345,24 @@ export function ContactSection() {
                         name="message"
                         rows={5}
                         disabled={isSubmitting}
+                        onBlur={(e) => {
+                          setTouched({ ...touched, message: true });
+                          validateField("message", e.target.value);
+                        }}
+                        onChange={(e) => {
+                          if (touched.message) {
+                            validateField("message", e.target.value);
+                          }
+                        }}
+                        aria-invalid={errors.message ? "true" : "false"}
+                        aria-describedby={errors.message ? "message-error" : undefined}
                         className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 resize-none disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
                           errors.message ? "border-red-500" : "border-gray-300"
                         }`}
                         placeholder="Tell me about your project..."
                       />
                       {errors.message && (
-                        <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                        <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">{errors.message}</p>
                       )}
                     </motion.div>
                     

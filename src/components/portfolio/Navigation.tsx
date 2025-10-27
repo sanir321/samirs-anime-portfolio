@@ -7,6 +7,28 @@ export function Navigation() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
+    // Keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const sections = ["home", "about", "project", "services", "contact"];
+      const currentIndex = sections.indexOf(activeSection);
+      
+      if (e.key === "ArrowDown" && currentIndex < sections.length - 1) {
+        e.preventDefault();
+        scrollToSection(sections[currentIndex + 1]);
+      } else if (e.key === "ArrowUp" && currentIndex > 0) {
+        e.preventDefault();
+        scrollToSection(sections[currentIndex - 1]);
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        scrollToSection("home");
+      } else if (e.key === "End") {
+        e.preventDefault();
+        scrollToSection("contact");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    
     const handleScroll = () => {
       const scrollPos = window.scrollY + 100;
       const sections = ["home", "about", "project", "services", "contact"];
@@ -30,8 +52,11 @@ export function Navigation() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeSection]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -62,6 +87,8 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm"
+        role="navigation"
+        aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <nav className="flex justify-center">
@@ -70,6 +97,8 @@ export function Navigation() {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
+                    aria-label={`Navigate to ${item.label} section`}
+                    aria-current={activeSection === item.id ? "page" : undefined}
                     className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full transition-all whitespace-nowrap ${
                       activeSection === item.id 
                         ? "bg-black text-white" 
@@ -97,6 +126,7 @@ export function Navigation() {
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
         onClick={scrollToTop}
+        aria-label="Scroll back to top"
         className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 bg-blue-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center cursor-pointer z-50 shadow-lg hover:bg-blue-700 transition-colors"
         style={{ display: showBackToTop ? "flex" : "none" }}
       >

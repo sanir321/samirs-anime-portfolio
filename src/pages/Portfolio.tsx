@@ -5,6 +5,7 @@ import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -42,6 +43,7 @@ export default function Portfolio() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white text-gray-900"
     >
+      <ScrollProgress />
       <Navigation />
       
       <div className="md:ml-0">
