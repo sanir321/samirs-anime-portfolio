@@ -8,7 +8,7 @@ const projects = [
   {
     title: "E-Commerce Website",
     description: "Modern online store with product filtering, cart, and payment system.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "CSS", "JavaScript"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "Personal portfolio to showcase my design and coding projects.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "CSS", "Bootstrap"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Weather App",
     description: "Responsive app showing real-time weather data using API integration.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "CSS", "API"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
@@ -32,7 +32,7 @@ const projects = [
   {
     title: "Blog Website",
     description: "Clean and simple blogging platform with markdown support.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "Tailwind", "JavaScript"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
@@ -40,7 +40,7 @@ const projects = [
   {
     title: "Game Landing Page",
     description: "Landing page for a game with animations and parallax effects.",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "CSS", "GSAP"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
@@ -48,7 +48,7 @@ const projects = [
   {
     title: "Task Manager",
     description: "Task tracking web app with CRUD features and clean UI.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80", // TODO: Replace with your project image URL
     tags: ["HTML", "CSS", "JS"],
     demo: "#", // TODO: Replace with your actual demo link
     github: "#" // TODO: Replace with your actual GitHub repository link
