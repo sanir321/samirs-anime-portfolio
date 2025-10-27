@@ -1,0 +1,134 @@
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    title: "E-Commerce Website",
+    description: "Modern online store with product filtering, cart, and payment system.",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    tags: ["HTML", "CSS", "JavaScript"],
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Personal portfolio to showcase my design and coding projects.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+    tags: ["HTML", "CSS", "Bootstrap"],
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Weather App",
+    description: "Responsive app showing real-time weather data using API integration.",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
+    tags: ["HTML", "CSS", "API"],
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Blog Website",
+    description: "Clean and simple blogging platform with markdown support.",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+    tags: ["HTML", "Tailwind", "JavaScript"],
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Game Landing Page",
+    description: "Landing page for a game with animations and parallax effects.",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
+    tags: ["HTML", "CSS", "GSAP"],
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Task Manager",
+    description: "Task tracking web app with CRUD features and clean UI.",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+    tags: ["HTML", "CSS", "JS"],
+    demo: "#",
+    github: "#"
+  }
+];
+
+export function ProjectsSection() {
+  return (
+    <section className="py-20 px-4 bg-slate-900/50" id="project">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-purple-400 text-sm uppercase tracking-wider mb-4">PROJECTS</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-8">Featured Work</h1>
+          <div className="border-t border-purple-500/20 mb-8"></div>
+          
+          <div className="text-center text-gray-400 mb-12 space-y-1">
+            <p>A showcase of my recent projects demonstrating expertise in full-stack</p>
+            <p>development, modern frameworks, and creative problem-solving.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="bg-slate-800/50 border-purple-500/20 overflow-hidden group hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                    <p className="text-gray-400 mb-4 flex-1">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map(tag => (
+                        <Badge key={tag} variant="outline" className="border-purple-500/50 text-purple-300">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <Button 
+                        size="sm"
+                        className="flex-1 bg-purple-500 hover:bg-purple-600"
+                        onClick={() => window.open(project.github, "_blank")}
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        GitHub
+                      </Button>
+                      <Button 
+                        size="sm"
+                        variant="outline"
+                        className="flex-1 border-purple-500 text-purple-300 hover:bg-purple-500/10"
+                        onClick={() => window.open(project.demo, "_blank")}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
