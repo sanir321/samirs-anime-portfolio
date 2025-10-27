@@ -139,6 +139,7 @@ export function ContactSection() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="flex justify-center gap-3 pt-2"
             >
+              {/* TODO: Replace with your actual GitHub profile URL */}
               <motion.a 
                 href="https://github.com" 
                 target="_blank" 
@@ -154,6 +155,7 @@ export function ContactSection() {
                   GitHub
                 </Button>
               </motion.a>
+              {/* TODO: Replace with your actual LinkedIn profile URL */}
               <motion.a 
                 href="https://linkedin.com" 
                 target="_blank" 

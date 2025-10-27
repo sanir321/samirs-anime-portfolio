@@ -43,6 +43,7 @@ export function Footer() {
           </ul>
           
           <div className="flex gap-4">
+            {/* TODO: Replace with your actual GitHub profile URL */}
             <a 
               href="https://github.com" 
               target="_blank" 
@@ -51,6 +52,7 @@ export function Footer() {
             >
               <Github className="h-5 w-5" />
             </a>
+            {/* TODO: Replace with your actual LinkedIn profile URL */}
             <a 
               href="https://linkedin.com" 
               target="_blank" 
@@ -59,6 +61,7 @@ export function Footer() {
             >
               <Linkedin className="h-5 w-5" />
             </a>
+            {/* Instagram link is already correct */}
             <a 
               href="https://instagram.com/kineee_2" 
               target="_blank" 

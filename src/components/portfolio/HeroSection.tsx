@@ -124,17 +124,30 @@ export function HeroSection() {
             </div>
             
             <div className="flex flex-wrap gap-4 mb-6">
+              {/* TODO: Add your hire me link here (e.g., contact form, email, or booking link) */}
               <Button 
                 size="lg"
                 className="bg-black hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-all"
+                onClick={() => {
+                  // TODO: Replace with your hire me action
+                  // Example: window.location.href = "mailto:zenosayz05@gmail.com?subject=Hire%20Inquiry"
+                  // Or: navigate to contact section
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <ArrowRight className="mr-2 h-4 w-4" />
                 Hire Me
               </Button>
+              {/* TODO: Add your CV download link here */}
               <Button 
                 size="lg"
                 variant="outline"
                 className="border-2 border-black text-black hover:bg-black hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white dark:hover:border-blue-600 rounded-lg transition-all"
+                onClick={() => {
+                  // TODO: Replace with your actual CV file URL
+                  // Example: window.open('/path-to-your-cv.pdf', '_blank')
+                  console.log('Add your CV download link here');
+                }}
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
@@ -144,14 +157,17 @@ export function HeroSection() {
             <div className="border-t border-gray-300 dark:border-gray-700 pt-6">
               <p className="text-gray-600 dark:text-gray-400 mb-4">Follow me:</p>
               <div className="flex gap-4">
+                {/* TODO: Replace with your actual GitHub profile URL */}
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   <Github className="h-5 w-5" />
                 </a>
+                {/* TODO: Replace with your actual LinkedIn profile URL */}
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
+                {/* Instagram link is already correct */}
                 <a href="https://instagram.com/kineee_2" target="_blank" rel="noopener noreferrer"
                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   <Instagram className="h-5 w-5" />
