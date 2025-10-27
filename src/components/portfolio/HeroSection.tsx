@@ -1,8 +1,38 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MapPin, Briefcase, Download, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export function HeroSection() {
+  const [displayedText, setDisplayedText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const words = ["Frontend Developer", "UI/UX Designer", "Web Enthusiast", "React Developer"];
+
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 50 : 100;
+    const currentWord = words[wordIndex];
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < currentWord.length) {
+        setDisplayedText(currentWord.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      } else if (isDeleting && charIndex > 0) {
+        setDisplayedText(currentWord.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else {
+        setIsDeleting(!isDeleting);
+        if (!isDeleting) {
+          setWordIndex((wordIndex + 1) % words.length);
+        }
+      }
+    }, isDeleting ? typingSpeed : (charIndex === currentWord.length ? 1000 : typingSpeed));
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, wordIndex, words]);
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20" id="home">
       <div className="max-w-7xl mx-auto w-full">
@@ -26,7 +56,9 @@ export function HeroSection() {
               Hi, I'm <span className="text-blue-600">Samir</span>
             </h1>
             
-            <h3 className="text-3xl md:text-4xl text-gray-700 mb-6 font-['Playfair_Display']">Frontend Developer</h3>
+            <h3 className="text-3xl md:text-4xl text-gray-700 mb-6 font-['Playfair_Display'] min-h-[3rem]">
+              {displayedText}<span className="animate-pulse">|</span>
+            </h3>
             
             <div className="text-base text-gray-600 mb-6 space-y-1 font-['Roboto']">
               <p>I create beautiful, functional, and user-centered digital experiences. With</p>

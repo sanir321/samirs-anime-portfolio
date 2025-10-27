@@ -126,3 +126,15 @@
     cursor: pointer;
   }
 }
+
+/* Reveal Animation Styles */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
