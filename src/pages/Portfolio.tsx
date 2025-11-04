@@ -7,6 +7,7 @@ import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Skeleton } from "@/components/ui/skeleton";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Instagram, X } from "lucide-react";
@@ -17,8 +18,14 @@ export default function Portfolio() {
     const hasVisited = localStorage.getItem("hasVisitedPortfolio");
     return !hasVisited;
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Simulate initial content loading
+    const loadTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
     // Hide welcome popup after 3 seconds if showing
     if (showWelcome) {
       const welcomeTimer = setTimeout(() => {
@@ -26,7 +33,10 @@ export default function Portfolio() {
         localStorage.setItem("hasVisitedPortfolio", "true");
       }, 3000);
       
-      return () => clearTimeout(welcomeTimer);
+      return () => {
+        clearTimeout(welcomeTimer);
+        clearTimeout(loadTimer);
+      };
     }
 
     const handleScroll = () => {
@@ -47,8 +57,106 @@ export default function Portfolio() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(loadTimer);
     };
   }, [showWelcome]);
+
+  // Skeleton Loader Component
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <ScrollProgress />
+        <ThemeToggle />
+        
+        {/* Navigation Skeleton */}
+        <div className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm hidden md:block">
+          <div className="max-w-6xl mx-auto px-8 py-3">
+            <Skeleton className="h-12 w-full max-w-2xl mx-auto rounded-full" />
+          </div>
+        </div>
+
+        <div className="md:ml-0">
+          {/* Hero Skeleton */}
+          <section className="min-h-screen flex items-center justify-center px-2 sm:px-8 md:px-16 pt-1 md:pt-16 pb-4">
+            <div className="max-w-6xl mx-auto w-full">
+              <Skeleton className="h-8 w-64 mb-6 rounded-full" />
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-4">
+                  <Skeleton className="h-12 w-3/4" />
+                  <Skeleton className="h-8 w-2/3" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-5/6" />
+                  <div className="flex gap-3 mt-6">
+                    <Skeleton className="h-12 w-32 rounded-lg" />
+                    <Skeleton className="h-12 w-40 rounded-lg" />
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <Skeleton className="h-96 w-80 rounded-xl" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* About Skeleton */}
+          <section className="py-8 px-8 bg-white dark:bg-gray-900">
+            <div className="max-w-6xl mx-auto">
+              <Skeleton className="h-6 w-32 mb-4" />
+              <Skeleton className="h-8 w-64 mb-6" />
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-5/6" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-32 w-full rounded-lg mt-4" />
+                </div>
+                <Skeleton className="h-96 w-full rounded-2xl" />
+              </div>
+            </div>
+          </section>
+
+          {/* Projects Skeleton */}
+          <section className="py-10 px-8 bg-gray-50 dark:bg-gray-800">
+            <div className="max-w-6xl mx-auto">
+              <Skeleton className="h-6 w-32 mb-4 mx-auto" />
+              <Skeleton className="h-8 w-48 mb-8 mx-auto" />
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <Skeleton key={i} className="h-80 w-full rounded-2xl" />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Services Skeleton */}
+          <section className="py-10 px-8 bg-white dark:bg-gray-900">
+            <div className="max-w-6xl mx-auto">
+              <Skeleton className="h-6 w-32 mb-4 mx-auto" />
+              <Skeleton className="h-8 w-64 mb-8 mx-auto" />
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {[1, 2, 3, 4].map((i) => (
+                  <Skeleton key={i} className="h-64 w-full rounded-2xl" />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Skeleton */}
+          <section className="py-10 px-8 bg-gray-50 dark:bg-gray-800">
+            <div className="max-w-3xl mx-auto">
+              <Skeleton className="h-6 w-32 mb-4 mx-auto" />
+              <Skeleton className="h-8 w-48 mb-8 mx-auto" />
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <Skeleton key={i} className="h-32 w-full rounded-lg" />
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
