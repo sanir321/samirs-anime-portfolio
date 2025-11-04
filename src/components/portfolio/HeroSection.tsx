@@ -203,11 +203,11 @@ export function HeroSection() {
                   perspective: "1000px"
                 }}
               >
-                <motion.img 
-                  src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
-                  alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
-                  loading="lazy"
-                  className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[350px] sm:max-h-[450px]"
+              <motion.img 
+                src="https://harmless-tapir-303.convex.cloud/api/storage/415d74a1-761b-48ff-8e95-1cd542d180b2"
+                alt="Samir Khadka - Frontend Developer and UI/UX Designer portfolio hero image"
+                loading="eager"
+                className="relative rounded-xl border border-gray-300 shadow-lg w-full h-auto object-contain max-h-[350px] sm:max-h-[450px]"
                   style={{ 
                     willChange: 'transform',
                     transformStyle: "preserve-3d"

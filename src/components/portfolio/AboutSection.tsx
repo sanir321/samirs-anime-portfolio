@@ -162,7 +162,7 @@ export function AboutSection() {
               <motion.img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/34a187ae-7bb7-444c-b9dc-a9e98c854629"
                 alt="Samir Khadka - B.Tech CSBS student at SA Engineering College, passionate about web development"
-                loading="lazy"
+                loading="eager"
                 className="rounded-2xl border border-black shadow-lg w-full max-w-md"
                 style={{ willChange: 'transform' }}
                 whileHover={{

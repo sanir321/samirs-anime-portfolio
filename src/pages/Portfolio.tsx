@@ -9,17 +9,27 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, X } from "lucide-react";
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(() => {
+    // Check if user has visited before
+    const hasVisited = localStorage.getItem("hasVisitedPortfolio");
+    return !hasVisited;
+  });
 
   useEffect(() => {
+    if (!showWelcome) {
+      setIsVisible(true);
+      return;
+    }
+
     // Hide welcome popup after 3 seconds
     const welcomeTimer = setTimeout(() => {
       setShowWelcome(false);
       setIsVisible(true);
+      localStorage.setItem("hasVisitedPortfolio", "true");
     }, 3000);
 
     const handleScroll = () => {
@@ -55,6 +65,22 @@ export default function Portfolio() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-[200] flex items-center justify-center bg-white dark:bg-gray-900"
           >
+            {/* Close button */}
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              onClick={() => {
+                setShowWelcome(false);
+                setIsVisible(true);
+                localStorage.setItem("hasVisitedPortfolio", "true");
+              }}
+              className="absolute top-6 right-6 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
+              aria-label="Close welcome popup"
+            >
+              <X className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+            </motion.button>
+
             <motion.div
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
