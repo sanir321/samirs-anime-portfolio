@@ -10,7 +10,7 @@ export function HeroSection() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const words = ["Frontend Developer", "UI/UX Designer", "Web Enthusiast", "React Developer"];
+  const words = ["Full-Stack Developer", "UI/UX Designer", "Web Enthusiast", "AI-Powered Developer"];
 
   const { scrollY } = useScroll();
   const yImage = useTransform(scrollY, [0, 500], [0, 150]);
@@ -109,9 +109,9 @@ export function HeroSection() {
             </h3>
             
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 space-y-1 font-['Roboto']">
-              <p>I create beautiful, functional, and user-centered digital experiences.</p>
-              <p className="hidden sm:block">With 2+ years of experience in web development, I bring ideas to life</p>
-              <p className="hidden sm:block">through clean code and thoughtful design.</p>
+              <p>I create beautiful, functional, and user-centered digital experiences across the full stack.</p>
+              <p className="hidden sm:block">With 2+ years of experience in web development, I leverage AI to work efficiently,</p>
+              <p className="hidden sm:block">bringing ideas to life through clean code and thoughtful design.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 text-gray-700 dark:text-gray-300 text-xs sm:text-sm">

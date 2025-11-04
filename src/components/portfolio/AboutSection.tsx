@@ -76,9 +76,9 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
               >
-                I'm a creative front-end developer passionate about building modern and responsive web experiences.
+                I'm a creative full-stack developer passionate about building modern and responsive web experiences.
                 My journey began with a love for design and evolved into a deep curiosity for how the web works — combining
-                logic with creativity to bring ideas to life.
+                logic with creativity to bring ideas to life across the entire stack.
               </motion.p>
               
               <motion.p 
@@ -89,7 +89,8 @@ export function AboutSection() {
                 className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
               >
                 When I'm not coding, I enjoy learning new technologies, improving my projects,
-                and exploring better ways to make the web faster and more engaging.
+                and exploring better ways to make the web faster and more engaging. I leverage AI tools to work
+                efficiently and productively, allowing me to focus on solving complex problems and delivering high-quality solutions.
                 I believe in continuous learning, attention to detail, and the power of clean, meaningful design.
               </motion.p>
               
