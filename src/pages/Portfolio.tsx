@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { Github, Linkedin, Instagram, X } from "lucide-react";
 
 export default function Portfolio() {
-  const [isVisible, setIsVisible] = useState(false);
   const [showWelcome, setShowWelcome] = useState(() => {
     // Check if user has visited before
     const hasVisited = localStorage.getItem("hasVisitedPortfolio");
@@ -20,17 +19,15 @@ export default function Portfolio() {
   });
 
   useEffect(() => {
-    if (!showWelcome) {
-      setIsVisible(true);
-      return;
+    // Hide welcome popup after 3 seconds if showing
+    if (showWelcome) {
+      const welcomeTimer = setTimeout(() => {
+        setShowWelcome(false);
+        localStorage.setItem("hasVisitedPortfolio", "true");
+      }, 3000);
+      
+      return () => clearTimeout(welcomeTimer);
     }
-
-    // Hide welcome popup after 3 seconds
-    const welcomeTimer = setTimeout(() => {
-      setShowWelcome(false);
-      setIsVisible(true);
-      localStorage.setItem("hasVisitedPortfolio", "true");
-    }, 3000);
 
     const handleScroll = () => {
       const revealElements = document.querySelectorAll('.reveal');
@@ -49,10 +46,9 @@ export default function Portfolio() {
     handleScroll();
 
     return () => {
-      clearTimeout(welcomeTimer);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [showWelcome]);
 
   return (
     <>
@@ -72,7 +68,6 @@ export default function Portfolio() {
               transition={{ delay: 0.5 }}
               onClick={() => {
                 setShowWelcome(false);
-                setIsVisible(true);
                 localStorage.setItem("hasVisitedPortfolio", "true");
               }}
               className="absolute top-6 right-6 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
@@ -141,12 +136,7 @@ export default function Portfolio() {
       </AnimatePresence>
 
       {/* Main Portfolio Content */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-      >
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <ScrollProgress />
         <Navigation />
         <ThemeToggle />
@@ -159,7 +149,7 @@ export default function Portfolio() {
           <div id="contact" className="reveal"><ContactSection /></div>
           <Footer />
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }
