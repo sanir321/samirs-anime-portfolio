@@ -13,24 +13,19 @@ import { useEffect, useState } from "react";
 import { Github, Linkedin, Instagram, X } from "lucide-react";
 
 export default function Portfolio() {
-  const [showWelcome, setShowWelcome] = useState(() => {
-    // Check if user has visited before
-    const hasVisited = localStorage.getItem("hasVisitedPortfolio");
-    return !hasVisited;
-  });
+  const [showWelcome, setShowWelcome] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate initial content loading
+    // Simulate initial content loading - reduced to 300ms for faster loading
     const loadTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 300);
 
     // Hide welcome popup after 3 seconds if showing
     if (showWelcome) {
       const welcomeTimer = setTimeout(() => {
         setShowWelcome(false);
-        localStorage.setItem("hasVisitedPortfolio", "true");
       }, 3000);
       
       return () => {
@@ -176,7 +171,6 @@ export default function Portfolio() {
               transition={{ delay: 0.5 }}
               onClick={() => {
                 setShowWelcome(false);
-                localStorage.setItem("hasVisitedPortfolio", "true");
               }}
               className="absolute top-6 right-6 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
               aria-label="Close welcome popup"
